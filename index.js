@@ -291,10 +291,26 @@ Use addArtist to do the following:
 5. Add the newly created object to the copied array, then return the copied array
 🌟 EXAMPLE: Invoking addArtist(artists, 'John Doe', '1988-2022', 'Full Stack Development', 'African American', 'I have a background in customer service at Big Retail Chain. I am attending BloomTech to become a Frontend Developer.') should return the artists array with the above object added to the end of the array. */
 
-function addArtist() 
+function addArtist( artists, name , years, genre, nationality, bio) {
+  let y = [{name : "name",
+    years : "years",
+    genre : "genre",
+   nationality : "nationality", 
+   bio :"bio"} ]
+ y.name = name
+ y.years = years
+ y.genre = genre
+ y.nationality = nationality
+ y.bio = bio
+ y.push(y.name, y.years, y.genre, y.nationality, y.bio);
+    for (let i = 0 ; i < artists.length; i ++){
+      y.push(artists[i])
+    }
+    
+ return y
+} 
   
-
-
+//addArtist(artists, "jam" , "10","rock", "yams", "hungry")
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
@@ -304,8 +320,13 @@ Use lotsOfArt to do the following:
 🌟 EXAMPLE: lotsOfArt(artists) will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]
 */
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt (artists) {
+  const y= []
+  for (let i = 0; i < artists.length; i++){
+    if (artists[i].paintings > 100)
+    y.push(artists[i].name)
+  }
+  return y
 }
 
 
